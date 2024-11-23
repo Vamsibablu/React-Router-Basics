@@ -19,24 +19,32 @@ import TodoErr from "./components/TodoError";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<RootLayoutFn />}>
+      <Route
+        path="/"
+        element={<RootLayoutFn />}
+        errorElement={<div>404 page not found</div>}
+      >
         <Route index element={<HomePage />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactLayoutfn />}>
           <Route path="/contact/info" element={<ContactInfo />} />
           <Route path="form" element={<ContactForm />} />
         </Route>
-        <Route path="/todo" element={<TodoLayoutFn />}>
+        <Route
+          path="/todo"
+          element={<TodoLayoutFn />}
+          errorElement={<TodoErr />}
+        >
           <Route index element={<TodoListContainer />} loader={TodoListData} />
           <Route
             path=":id"
             element={<TodoUserFn />}
             loader={todoUserData}
-            errorElement={<TodoErr />}
+            // errorElement={<TodoErr />}
           />
         </Route>
         <Route path="/products" element={<ProductsPage />} />
-        <Route path="*" element={<div>404 Page Not Found</div>} />
+        {/* <Route path="*" element={<div>404 Page Not Found</div>} /> */}
       </Route>
     )
   );

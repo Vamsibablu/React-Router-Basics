@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import BodyComponent from "./BodyComponent";
 
 const RootLayoutFn = () => {
-  console.log("Layout Component");
   // const location = useLocation();
   const [a, setA] = useState(0);
   // useEffect(() => {
@@ -18,7 +17,6 @@ const RootLayoutFn = () => {
   //     clearInterval(int);
   //   };
   // }, []);
-  console.log(a, "root  ");
   return (
     <div>
       <NavBarFn />

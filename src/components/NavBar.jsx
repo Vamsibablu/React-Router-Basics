@@ -4,8 +4,11 @@ import Logo from "/vite.svg";
 export default function NavBarFn() {
   const navigate = useNavigate();
   const handleNavigate = () => {
-    navigate("/about");
-    console.log("navigateeeeeee");
+    navigate("/about?name=sample&age=20", {
+      replace: true,
+      state: { name: "hello", age: 23 },
+    });
+    // navigate(0);
   };
 
   console.log("nav");
