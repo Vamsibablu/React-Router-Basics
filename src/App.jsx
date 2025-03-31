@@ -11,11 +11,12 @@ import AboutPage from "./pages/About";
 import ProductsPage from "./pages/Products";
 import ContactLayoutfn from "./Layout/ContactLayout";
 import ContactInfo from "./components/ContactInfo";
-import ContactForm from "./components/ContactForm";
+import ContactForm1 from "./components/ContactForm1";
 import TodoLayoutFn from "./Layout/TodoLayout";
 import TodoListContainer, { TodoListData } from "./components/TodoContainer";
 import TodoUserFn, { todoUserData } from "./components/TodoUser";
 import TodoErr from "./components/TodoError";
+import ContactForm2 from "./components/ContactForm2";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -28,7 +29,8 @@ function App() {
         <Route path="about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactLayoutfn />}>
           <Route path="/contact/info" element={<ContactInfo />} />
-          <Route path="form" element={<ContactForm />} />
+          <Route path="form1" element={<ContactForm1 />} />
+          <Route path="form2" element={<ContactForm2 />} />
         </Route>
         <Route
           path="/todo"

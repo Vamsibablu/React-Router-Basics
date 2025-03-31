@@ -14,22 +14,26 @@ const ContactPage = () => {
       This is contact page
       <button
         onClick={() => {
-          handleClick("info");
+          setA(!a);
         }}
       >
         Contact Info
       </button>
       <button
-        // onClick={() => {
-        //   handleClick("form");
-        // }}
         onClick={() => {
-          setA(!a);
+          handleClick("form1");
         }}
       >
-        Form
+        Form1
       </button>
-      {a && <Navigate to={"form"} />}
+      <button
+        onClick={() => {
+          handleClick("form2");
+        }}
+      >
+        Form2
+      </button>
+      {a && <Navigate to={"info"} />}
     </div>
   );
 };
